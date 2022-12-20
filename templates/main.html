@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>League of Legends - About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
+    <link href="main_style.css" rel="stylesheet">
+</head>
+
+<body class="text-bg-dark">
+
+    
+
+    {% block main %}
+    <!-- INTRO SECTION -->
+    <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+        <div class="row">
+            <div class="col-sm d-none d-lg-block bg-light rounded">
+                <h1 class="display-4 fst-italic primary">League of Legends</h1>
+                <p class="lead my-3">In the game, two teams of five players battle in player-versus-player combat, each team occupying and defending their half of the map. Each of the ten players controls a character, known as a "champion", with unique abilities and differing styles of play. During a match, champions become more powerful by collecting experience points, earning gold, and purchasing items to defeat the opposing team. In League's main mode, Summoner's Rift, a team wins by pushing through to the enemy base and destroying their "Nexus", a large structure located within.</p>
+                <p class="lead mb-0"><a href="https://en.wikipedia.org/wiki/League_of_Legends" target="_blank" class="text-blue fw-bold">Continue reading on Wikipedia...</a></p>
+            </div>
+            <div class="col-sm d-lg-none">
+                <h1 class="display-4 fst-italic primary">League of Legends</h1>
+                <p class="lead my-3"> An Online, 5v5, MOBA game.</p>
+                <p class="lead mb-0"><a href="https://en.wikipedia.org/wiki/League_of_Legends" target="_blank" class="text-blue fw-bold">For a longer description, read on Wikipedia...</a></p>
+            </div>
+            <div class="col-sm d-none d-lg-block">
+                <img src="League_of_Legends_Cover.webp" style="width:50vw" alt="LEAGUE OF LEGENDS">
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div
+                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary">Gameplay</strong>
+                    <h3 class="mb-0">Champions</h3>
+                    <div class="mb-1 text-muted">Over 140 to discover</div>
+                    <p class="card-text mb-auto">Each champion holds a unique play-style, and fills
+                    a specific niche for your team.</p>
+                    <a href="https://www.leagueoflegends.com/en-us/champions/" target="_blank" class="stretched-link">Browse the champions...</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img class="bd-placeholder-img" width="200" height="250" src="aphe306x414.png" alt="CHAMPIONS">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div
+                class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-success">Gameplay</strong>
+                    <h3 class="mb-0">Summoner's Rift</h3>
+                    <div class="mb-1 text-muted">One of the several maps available...</div>
+                    <p class="mb-auto">The main battle arena for League of Legends, used in
+                    most of the gameplay modes.</p>
+                    <a href="https://www.leagueoflegends.com/en-us/how-to-play/" target="_blank" class="stretched-link">Learn more about the rift...</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <img class="bd-placeholder-img" width="200" height="250" src="rift431x509.png" alt="SUMMONER's RIFT">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+
+        <div class="row mb-2">
+            <div class="col p-4 d-flex flex-column position-static">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">To the side is a list of resources used by competitive players in the League of
+                        Legends community, as well as some featured official websites by Riot Games.</p>
+                </div>
+            </div>
+
+            <div class="col p-4 d-flex flex-column position-static">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">3rd Party Resources</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="https://u.gg" target="_blank">u.gg</a></li>
+                        <li><a href="https://na.op.gg" target="_blank">op.gg</a></li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="col p-4 d-flex flex-column position-static">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">Official Sources</h4>
+                    <ol class="list-unstyled">
+                        <li><a href="https://www.leagueoflegends.com/en-us/" target="_blank">Main Website</a></li>
+                        <li><a href="https://www.youtube.com/c/leagueoflegends" target="_blank">Youtube</a></li>
+                        <li><a href="https://www.instagram.com/leagueoflegends/?hl=en" target="_blank">Instagram</a></li>
+                        <li><a href="https://twitter.com/riotgames" target="_blank">Twitter</a></li>
+                        <li><a href="https://www.facebook.com/leagueoflegends/" target="_blank">Facebook</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}
+
+
+</body>
+
+</html>

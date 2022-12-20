@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Info</title>
+
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="p_h_style.css" rel="stylesheet">
+
+    <!-- TEMPLATE FOR IF CONNECTION FAILS WITH APIKEY -->
+    <script src="data/templates/match1Template.js"></script>
+    <script src="data/templates/match2Template.js"></script>
+    <script src="data/templates/match3Template.js"></script>
+    <script src="data/templates/recentMatchesTemplate.js"></script>
+    <script src="data/templates/specificSummonerTemplate.js"></script>
+    <script src="data/templates/summonerInfoTemplate.js"></script>
+
+</head>
+
+<body class="text-bg-dark">
+
+    <!-- NAVBAR SECTION-->
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img class="brand" src="brand.png" alt="L">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto ms-auto mb-auto mb-lg-0">
+                    <li class="nav-item">
+                        <a href="main.html" class="btn btn-outline-primary">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="quiz.html" class="btn btn-outline-primary">QUIZ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="summoner_info.html" class="btn btn-outline-primary">RANKINGS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="personal_history.html" class="btn btn-primary disabled">SUMMONER SEARCH</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact.html" class="btn btn-outline-primary">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container-fluid">
+
+        <!-- INTRO SECTION -->
+        <div     class="row mb-1">
+            <section class="py-2 text-center mc_container">
+                <div id="saved" class="row py-lg-5">
+                  <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-light">INDIVIDUAL MATCH HISTORY</h1>
+                    <p>
+                      <div class="col py-lg-5">
+                        <form class="searchCommands">
+                            <label>Enter the Summoner Name to search:</label>
+                            <input type="text" class="form-control" id="summoner_name" placeholder="Enter Summoner Name Here">
+                            <a href="https://na.op.gg" target="_blank" class="btn btn-primary my-2 searchCommands">OP.GG</a>
+                            <a class="btn btn-primary searchCommands" onclick="searchSummoner()">Search Summoner</a>
+                            <div class="btn-group">
+                                <button type="button" id="queueSelected" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                                  All
+                                </button>
+                                <ul class="dropdown-menu" id="btnOptionsGrp">
+                                  <li><a id="" class="dropdown-item disabled changeQB selected" href="#" onclick="changeQueueButton(this)">All</a></li>
+                                  <li><a id="420" class="dropdown-item changeQB" href="#" onclick="changeQueueButton(this)">Ranked Solo Queue</a></li>
+                                  <li><a id="440" class="dropdown-item changeQB" href="#" onclick="changeQueueButton(this)">Ranked Flex</a></li>
+                                  <li><a id="700" class="dropdown-item changeQB" href="#" onclick="changeQueueButton(this)">Clash</a></li> 
+                                  <li><a id="450" class="dropdown-item changeQB" href="#" onclick="changeQueueButton(this)">ARAM</a></li> 
+                                  <li><a id="400" class="dropdown-item changeQB" href="#" onclick="changeQueueButton(this)">Normal - Draft</a></li> 
+                                  <li><a id="430" class="dropdown-item changeQB" href="#" onclick="changeQueueButton(this)">Normal - Blind Pick</a></li> 
+                                </ul>
+                            </div>
+                        </form>
+                        
+                      </div>
+                  </div>
+                </div>
+              </section>
+
+            <section class="row" id="overall_stats">
+                <div id="sidebar" class="col-md-3 py-3 hidden bg-dark rounded sidebar_padding">
+                  <div  class="position-sticky " style="top: 2rem; bottom: 2rem">
+                    <div id="ranked_sidebar" class="p-4 mb-3 bg-light rounded">
+                      <h4 id="sb_sn" class="fst-italic text-center" data-toggle="tooltip" data-placement="top"
+                      title="Summoner Name">Zayd Gets Laid</h4>
+                        <img id="sb_rank_img" class="rank_img" src="" alt="RANK">
+                        <p id="sb_rank" class="mb-0 rank_text text-center"></p>
+                        <div id="sb_winloss">
+                            <p id="sb_wins" class="m-auto wins"></p>
+                            <p id="sb_losses" class="m-auto losses"></p>
+                            <p id="sb_wr" class="m-auto winrate text-center"></p>
+                        </div>
+                    </div>
+                    <div class="p-4 mb-auto bg-light rounded">
+                      <h4 class="fst-italic text-primary mx-auto">CHAMPION : W/L</h4>
+                      <ol class="list-unstyled mb-3" id="champlist">
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col py-lg-5">
+                    <div id="matchhistory" class="mc_container">
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="apikey.js"></script>
+    <script src="constants.js"></script>
+    <script src="matchInformationAPI.js"></script>
+    <script src="champion.js"></script>
+    <script src="player_obj.js"></script>
+    <script src="items_code.js"></script>
+    <script src="personal_history.js"></script>
+
+</body>
+
+
+</html>
