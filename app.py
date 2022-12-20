@@ -20,7 +20,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-db = SQL("sqlite:///finance.db")
+db = SQL("sqlite:///league.db")
 
 # Make sure API key is set
 # if not os.environ.get("API_KEY"):
@@ -37,7 +37,7 @@ def after_request(response):
 
 
 @app.route("/main", methods=["GET", "POST"])
-# @login_required
+@login_required
 def account():
     return render_template("main.html")
 
