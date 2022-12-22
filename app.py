@@ -35,10 +35,15 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
+@app.route("/account", METHODS=["GET", "POST"])
+@login_required
+def account():
+    return render_template("account.html")
+
 
 @app.route("/main", methods=["GET", "POST"])
 @login_required
-def account():
+def main():
     return render_template("main.html")
 
 
@@ -108,7 +113,7 @@ def login():
         session["user_id"] = rows[0]["id"]
 
         # Redirect user to home page
-        return redirect("/")
+        return redirect("/main")
 
     # User reached route via GET (as by clicking a link or via redirect)
     else:
@@ -123,7 +128,7 @@ def logout():
     session.clear()
 
     # Redirect user to login form
-    return redirect("/")
+    return redirect("/main")
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -174,7 +179,7 @@ def validify_login():
     """ Verify user is logged in """
     if (session.get("user_id")):
         user_id = session.get("user_id")
-        user = db.execute("SELECT username, cash, hash FROM users WHERE id = ?", user_id)[0]
+        user = db.execute("SELECT username, hash FROM users WHERE id = ?", user_id)[0]
         return user
     else:
         return redirect("/login")

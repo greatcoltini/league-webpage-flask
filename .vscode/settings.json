@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:league-webpage-flask}/league.db",
+            "name": "league-database"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
